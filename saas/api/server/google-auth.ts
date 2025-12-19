@@ -11,7 +11,7 @@ function setupGoogle({ server }) {
     return;
   }
 
-  const verify = async (req, accessToken, refreshToken, profile, done) => {
+  const verify = async (_req, accessToken, refreshToken, profile, done) => {
     let email;
     let avatarUrl;
 
@@ -33,9 +33,9 @@ function setupGoogle({ server }) {
       });
 
       let teamSlugOfInvitedTeam;
-      if (user && req.session.invitationToken) {
+      if (user && _req.session.invitationToken) {
         teamSlugOfInvitedTeam = await Invitation.addUserToTeam({
-          token: req.session.invitationToken,
+          token: _req.session.invitationToken,
           user,
         }).catch((err) => console.error(err));
       }

@@ -6,7 +6,7 @@ import setupSitemapAndRobots from './setupSitemapAndRobots';
 import routesWithCache from './routesWithCache';
 
 const dev = process.env.NODE_ENV !== 'production';
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
 const app = next({ dev });
 const handle = app.getRequestHandler();
